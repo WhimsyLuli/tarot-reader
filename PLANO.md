@@ -13,8 +13,8 @@
 ## Onde uso a STL e por quê
 
 - **map<string,string>** em `Carta`: liga tema → significado. É o que faz a mesma carta significar coisas diferentes em amor/carreira/família. Um `vector` não serviria porque quero buscar pelo tema pelo nome, não por posição.
-- **set<string>** em `Baralho`: guarda os nomes já tirados para garantir 3 cartas diferentes sem repetição. `set` cuida disso sozinho (insert de nome já existente não entra).
-- **list<LeituraTarot>** em `Tarot`: histórico em que só adiciono no fim e percorro para listar; não preciso acessar por índice.
+- **set<string>** em `Baralho`: guarda os nomes já tirados para garantir 3 cartas diferentes sem repetição. `set` cuida disso sozinho.
+- **list<LeituraTarot>** em `Tarot`: histórico em que só adiciono no fim e percorro para listar, não preciso acessar por índice.
 - **vector<Carta>** em `Baralho`: sequência fixa que percorro e ordeno.
 - **sort + operator<**: `baralhoOrdenado()` ordena as cartas por nome.
 - **find + operator==**: `buscarCarta()` localiza uma carta pelo nome.
