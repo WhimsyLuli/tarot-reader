@@ -1,5 +1,8 @@
 #include "Tarot.hpp"
 
+#include <algorithm>
+#include <vector>
+
 Tarot::Tarot() : proximoNumero(1) {}
 
 bool Tarot::criarLeitura(int tema, const std::string& pergunta) {
@@ -24,6 +27,21 @@ bool Tarot::criarLeitura(int tema, const std::string& pergunta) {
     historico.push_back(leitura);
     proximoNumero++;
     return true;
+}
+
+const Carta* Tarot::buscarCarta(const std::string& nome) const {
+    const std::vector<Carta>& cartas = baralho.getCartas();
+    std::vector<Carta>::const_iterator it = std::find(cartas.begin(), cartas.end(), Carta(nome, "", ""));
+    if (it == cartas.end()) {
+        return 0;
+    }
+    return &(*it);
+}
+
+std::vector<Carta> Tarot::baralhoOrdenado() const {
+    std::vector<Carta> copia = baralho.getCartas();
+    std::sort(copia.begin(), copia.end());
+    return copia;
 }
 
 const std::list<LeituraTarot>& Tarot::getHistorico() const {

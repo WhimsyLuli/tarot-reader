@@ -5,12 +5,15 @@
 #include "LeituraTarot.hpp"
 #include <list>
 #include <string>
+#include <vector>
 
 class Tarot {
 public:
     Tarot();
 
     bool criarLeitura(int tema, const std::string& pergunta);
+    const Carta* buscarCarta(const std::string& nome) const;
+    std::vector<Carta> baralhoOrdenado() const;
     const std::list<LeituraTarot>& getHistorico() const;
     bool historicoVazio() const;
 

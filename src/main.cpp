@@ -14,6 +14,8 @@ int main() {
         std::cout << "\nTarot - leitura de tarot\n";
         std::cout << "1. Fazer leitura\n";
         std::cout << "2. Ver historico\n";
+        std::cout << "3. Buscar carta\n";
+        std::cout << "4. Listar baralho\n";
         std::cout << "0. Sair\n";
         std::cout << "Opcao: ";
 
@@ -73,6 +75,26 @@ int main() {
                 std::cout << "  Passado: " << cs[0].getNome()
                           << " | Presente: " << cs[1].getNome()
                           << " | Futuro: " << cs[2].getNome() << "\n";
+            }
+        } else if (opcao == 3) {
+            std::string nome;
+            std::cout << "Nome da carta: ";
+            std::getline(std::cin, nome);
+
+            const Carta* carta = tarot.buscarCarta(nome);
+            if (carta == 0) {
+                std::cout << "Carta nao encontrada.\n";
+            } else {
+                std::cout << carta->getNome() << " (" << carta->getCategoria() << ")\n";
+                std::cout << "Significado geral: " << carta->getSignificadoGeral() << "\n";
+                std::cout << "Amor: " << carta->significadoParaTema("amor") << "\n";
+                std::cout << "Carreira: " << carta->significadoParaTema("carreira") << "\n";
+                std::cout << "Familia: " << carta->significadoParaTema("familia") << "\n";
+            }
+        } else if (opcao == 4) {
+            std::vector<Carta> ordenadas = tarot.baralhoOrdenado();
+            for (std::size_t i = 0; i < ordenadas.size(); ++i) {
+                std::cout << i + 1 << ". " << ordenadas[i].getNome() << "\n";
             }
         } else {
             std::cout << "Opcao invalida.\n";
