@@ -35,9 +35,9 @@ Mostra cada leitura da sessão, na ordem em que foi feita, numerada (Leitura 1, 
 Pede: o nome (ex.: "O Sol").
 Mostra: o significado geral e os significados por tema. Usa find + operator==.
 
-4. Listar o baralho em ordem alfabética
+4. Listar o baralho em ordem numérica
 
-Mostra: as 22 cartas em ordem de nome. Usa sort + operator<.
+Mostra: as 22 cartas em ordem de numero do arcano. Usa sort + operator<.
 
 0. Sair
 

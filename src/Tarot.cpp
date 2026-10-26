@@ -31,7 +31,7 @@ bool Tarot::criarLeitura(int tema, const std::string& pergunta) {
 
 const Carta* Tarot::buscarCarta(const std::string& nome) const {
     const std::vector<Carta>& cartas = baralho.getCartas();
-    std::vector<Carta>::const_iterator it = std::find(cartas.begin(), cartas.end(), Carta(nome, "", ""));
+    std::vector<Carta>::const_iterator it = std::find(cartas.begin(), cartas.end(), Carta(0, nome, "", ""));
     if (it == cartas.end()) {
         return 0;
     }

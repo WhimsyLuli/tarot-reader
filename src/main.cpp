@@ -4,9 +4,11 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>
+#include <chrono>
 
 int main() {
-    std::srand(std::time(0));
+    std::srand(static_cast<unsigned int>(
+        std::chrono::high_resolution_clock::now().time_since_epoch().count()));
 
     Tarot tarot;
 

@@ -144,7 +144,7 @@ void Baralho::adicionarCarta(const std::string& nome, const std::string& categor
                              const std::string& significadoGeral,
                              const std::string& sigAmor, const std::string& sigCarreira,
                              const std::string& sigFamilia) {
-    Carta c(nome, categoria, significadoGeral);
+    Carta c(cartas.size(), nome, categoria, significadoGeral);
     c.adicionarSignificado("amor", sigAmor);
     c.adicionarSignificado("carreira", sigCarreira);
     c.adicionarSignificado("familia", sigFamilia);

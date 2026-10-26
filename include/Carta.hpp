@@ -6,11 +6,12 @@
 
 class Carta {
 public:
-    Carta(const std::string& nome, const std::string& categoria,
+    Carta(int numero, const std::string& nome, const std::string& categoria,
           const std::string& significadoGeral);
 
     void adicionarSignificado(const std::string& tema, const std::string& significado);
 
+    int getNumero() const;
     std::string getNome() const;
     std::string getCategoria() const;
     std::string getSignificadoGeral() const;
@@ -20,6 +21,7 @@ public:
     bool operator==(const Carta& outra) const;
 
 private:
+    int numero;
     std::string nome;
     std::string categoria;
     std::string significadoGeral;

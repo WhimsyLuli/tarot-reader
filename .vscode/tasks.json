@@ -1,0 +1,34 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compilar (texto)",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++11", "-Wall", "-Wextra",
+                "src/Carta.cpp", "src/Baralho.cpp", "src/LeituraTarot.cpp", "src/Tarot.cpp", "src/main.cpp",
+                "-Iinclude", "-o", "sistema"
+            ],
+            "group": "build",
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "Compilar (GUI)",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++11", "-Wall", "-Wextra",
+                "src/Carta.cpp", "src/Baralho.cpp", "src/LeituraTarot.cpp", "src/Tarot.cpp", "src/gui/main.cpp",
+                "-Iinclude",
+                "-I", "C:/raylib/include",
+                "-L", "C:/raylib/lib",
+                "-lraylib", "-lopengl32", "-lgdi32", "-lwinmm",
+                "-static-libgcc", "-static-libstdc++",
+                "-o", "sistema_gui"
+            ],
+            "group": "build",
+            "problemMatcher": ["$gcc"]
+        }
+    ]
+}

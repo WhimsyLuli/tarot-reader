@@ -8,6 +8,10 @@
   alterar código. Se a descrição for ambígua, pergunte em vez de supor.
 - Use C++11 e somente a biblioteca padrão. Não instale nada e não acesse a
   rede.
+- Exceção: no desafio da interface gráfica (seção 6 do ENUNCIADO.md), a
+  biblioteca raylib pode ser usada, mas apenas nos arquivos de interface
+  gráfica (pasta src/gui/). As classes do sistema (Carta, Baralho,
+  LeituraTarot, Tarot) continuam usando somente a biblioteca padrão.
 - Prefira guardar objetos diretamente nos containers da STL. Não use `new`
   nem `delete`, a não ser que o estudante peça herança com método virtual;
   nesse caso, explique quem libera a memória.
@@ -29,3 +33,4 @@
   IA" do `README.md`. Essas partes são escritas pelo estudante. Se achar que
   a descrição precisa mudar, sugira a mudança.
 - Não faça commit e não mexa no histórico do Git.
+- a raylib passa a ser permitida apenas no código da interface gráfica (desafio 3); as classes do sistema continuam só com biblioteca padrão.
