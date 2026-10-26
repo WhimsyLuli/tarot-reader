@@ -17,7 +17,9 @@ private:
     std::vector<Carta> cartas;
 
     void adicionarCarta(const std::string& nome, const std::string& categoria,
-                        const std::string& significadoGeral);
+                        const std::string& significadoGeral,
+                        const std::string& sigAmor, const std::string& sigCarreira,
+                        const std::string& sigFamilia);
 };
 
 #endif
