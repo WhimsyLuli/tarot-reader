@@ -1,17 +1,18 @@
 #include "Baralho.hpp"
 #include <iostream>
-#include <vector>
-#include <algorithm>
+#include <cstdlib>
+#include <ctime>
 
 int main() {
+    std::srand(std::time(0));
+
     Baralho baralho;
+    std::vector<Carta> tiragem = baralho.sortear3();
 
-    std::vector<Carta> cartas = baralho.getCartas();
-    std::sort(cartas.begin(), cartas.end());
-
-    std::cout << "Baralho de tarot - " << cartas.size() << " cartas\n";
-    for (std::size_t i = 0; i < cartas.size(); ++i) {
-        std::cout << i + 1 << ". " << cartas[i].getNome() << "\n";
+    std::cout << "Sorteio de 3 cartas\n";
+    const char* posicoes[3] = { "Passado", "Presente", "Futuro" };
+    for (int i = 0; i < 3; ++i) {
+        std::cout << posicoes[i] << ": " << tiragem[i].getNome() << "\n";
     }
 
     return 0;

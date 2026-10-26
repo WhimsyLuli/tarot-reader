@@ -9,6 +9,7 @@ class Baralho {
 public:
     Baralho();
 
+    std::vector<Carta> sortear3();
     const std::vector<Carta>& getCartas() const;
     std::size_t tamanho() const;
 

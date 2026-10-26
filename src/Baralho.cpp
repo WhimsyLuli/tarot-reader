@@ -1,5 +1,8 @@
 #include "Baralho.hpp"
 
+#include <cstdlib>
+#include <set>
+
 Baralho::Baralho() {
     adicionarCarta("O Louco", "Arcano Maior", "");
     adicionarCarta("O Mago", "Arcano Maior", "");
@@ -23,6 +26,22 @@ Baralho::Baralho() {
     adicionarCarta("O Sol", "Arcano Maior", "");
     adicionarCarta("O Julgamento", "Arcano Maior", "");
     adicionarCarta("O Mundo", "Arcano Maior", "");
+}
+
+std::vector<Carta> Baralho::sortear3() {
+    std::set<std::string> usados;
+    std::vector<Carta> resultado;
+
+    while (resultado.size() < 3) {
+        int i = std::rand() % cartas.size();
+        const std::string& nome = cartas[i].getNome();
+        if (usados.find(nome) == usados.end()) {
+            usados.insert(nome);
+            resultado.push_back(cartas[i]);
+        }
+    }
+
+    return resultado;
 }
 
 const std::vector<Carta>& Baralho::getCartas() const {
