@@ -3,7 +3,7 @@
 Atividade da Unidade 2 de Linguagem de Programação I. Leia `ENUNCIADO.md`
 antes de começar.
 
-Uma frase dizendo o que o sistema faz. A descrição completa está em
+Esse é um Leitor de Tarot. A descrição completa está em
 `DESCRICAO.md`.
 
 ## Arquivos
