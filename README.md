@@ -1,4 +1,4 @@
-# Nome do sistema
+# Leitor de Tarot
 
 Atividade da Unidade 2 de Linguagem de Programação I. Leia `ENUNCIADO.md`
 antes de começar.
@@ -36,14 +36,14 @@ Escreva esta seção sem IA. Para cada container ou algoritmo da STL que o
 sistema usa: em que classe ele está, o que guarda, e por que você escolheu
 ele e não outro.
 
-Onde	| O quê	| Por quê
-
-Carta	| map<string,string> (significadosPorTema)| liga tema → significado, busca pelo nome do tema, não por posição
-Baralho | set<string> (cartas já tiradas)	| garante 3 cartas diferentes sem repetição, insert ignora duplicata
-Tarot	| list<LeituraTarot> (histórico)	| só adiciono no fim e percorro para listar, não preciso de índice
-Baralho | 	vector<Carta> (as 22 cartas)	| sequência fixa que percorro e ordeno
-Tarot::baralhoOrdenado()	| sort + operator< da Carta |	ordena as cartas por nome
-Tarot::buscarCarta() | find + operator== da Carta | localiza uma carta pelo nome
+| Onde | O quê | Por quê |
+| --- | --- | --- |
+| Carta | map<string,string> (significadosPorTema) | liga tema → significado, busca pelo nome do tema, não por posição |
+| Baralho | set<string> (cartas já tiradas) | garante 3 cartas diferentes sem repetição, insert ignora duplicata |
+| Tarot | list<LeituraTarot> (histórico) | só adiciono no fim e percorro para listar, não preciso de índice |
+| Baralho | vector<Carta> (as 22 cartas) | sequência fixa que percorro e ordeno |
+| Tarot::baralhoOrdenado() | sort + operator< da Carta | ordena as cartas por nome |
+| Tarot::buscarCarta() | find + operator== da Carta | localiza uma carta pelo nome |
 
 ## Como usei a IA
 
